@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <aside>
+      <h2>Quick Links</h2>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <h2>AI Tools</h2>
+      <ul>
+        <li><a href="#">ChatGPT</a></li>
+        <li><a href="#">Microsoft Copilot</a></li>
+        <li><a href="#">Github Copilot</a></li>
+        <li><a href="#">Claude</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1>Contact Us</h1>
+      <form action="https://platinitee.com/talentlync/form.php" method="post">
+        <div>
+          <label for="username">User Name: </label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter your name"
+            minlength="3"
+            maxlength="40"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="age">Age: </label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Enter your age"
+            min="18"
+            max="25"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="dob">Date of Birth: </label>
+          <input type="date" name="dob" id="dob" required max="" />
+        </div>
+        <div>
+          <label for="requirements">Requirements:</label>
+          <textarea
+            name="requirements"
+            id="requirements"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2026 AI Tools & Solutions. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
