@@ -1,0 +1,145 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Form</title>
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <div>
+      <form action="" method="post" enctype="multipart/form-data">
+        <div>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            minlength="8"
+            pattern="[0-9]"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="roll_no">Roll No:</label>
+          <input
+            type="text"
+            name="roll_no"
+            id="roll_no"
+            placeholder="Enter your Roll No"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="phone_no">Phone Number:</label>
+          <input
+            type="tel"
+            name="phone_no"
+            id="phone_no"
+            placeholder="Enter your phone number"
+            minlength="10"
+            maxlength="10"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="dob">Date of Birth:</label>
+          <input type="date" name="dob" id="dob" required />
+        </div>
+        <div>
+          <fieldset>
+            <legend>Gender:</legend>
+            <input
+              type="radio"
+              name="gender"
+              id="male"
+              value="Male"
+              required
+            /><label for="male">Male</label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="Female"
+            /><label for="female">Female</label>
+          </fieldset>
+        </div>
+
+        <div>
+          <label for="departments">Branch:</label>
+          <select name="departments" id="departments" required>
+            <option value="" disabled selected>Select your department</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+            <option value="CSE">CSE</option>
+          </select>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Skills:</legend>
+            <input type="checkbox" name="skills" id="cpp" value="C++" />
+            <label for="cpp">C++</label>
+            <input type="checkbox" name="skills" id="python" value="Python" />
+            <label for="python">Python</label>
+            <input
+              type="checkbox"
+              name="skills"
+              id="javascript"
+              value="Javascript"
+            />
+            <label for="java">Java</label>
+            <input type="checkbox" name="skills" id="c" value="C" />
+            <label for="c">C</label>
+            <input
+              type="checkbox"
+              name="skills"
+              id="javascript"
+              value="Javascript"
+            />
+            <label for="javascript">Javascript</label>
+            <input type="checkbox" name="skills" id="go" value="Go" />
+            <label for="go">Go</label>
+          </fieldset>
+        </div>
+
+        <div>
+          <label>Resume: </label>
+          <input type="file" name="resume" id="resume" accept=".pdf" required />
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
