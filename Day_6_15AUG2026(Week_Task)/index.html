@@ -3,13 +3,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dynamic Form</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Student Registration Form</h1>
     <div>
       <form action="" method="post" enctype="multipart/form-data">
         <div>
-          <label for="name">Name:</label>
+          <label for="name">Name *</label>
           <input
             type="text"
             name="name"
@@ -20,7 +21,7 @@
         </div>
 
         <div>
-          <label for="email">Email:</label>
+          <label for="email">Email *</label>
           <input
             type="email"
             name="email"
@@ -31,7 +32,7 @@
         </div>
 
         <div>
-          <label for="password">Password:</label>
+          <label for="password">Password *</label>
           <input
             type="password"
             name="password"
@@ -44,7 +45,7 @@
         </div>
 
         <div>
-          <label for="roll_no">Roll No:</label>
+          <label for="roll_no">Roll No *</label>
           <input
             type="text"
             name="roll_no"
@@ -55,7 +56,18 @@
         </div>
 
         <div>
-          <label for="phone_no">Phone Number:</label>
+          <label for="age">Age *</label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Enter your age"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="phone_no">Phone Number *</label>
           <input
             type="tel"
             name="phone_no"
@@ -68,12 +80,12 @@
         </div>
 
         <div>
-          <label for="dob">Date of Birth:</label>
+          <label for="dob">Date of Birth *</label>
           <input type="date" name="dob" id="dob" required />
         </div>
         <div>
           <fieldset>
-            <legend>Gender:</legend>
+            <legend>Gender *</legend>
             <input
               type="radio"
               name="gender"
@@ -87,6 +99,10 @@
               id="female"
               value="Female"
             /><label for="female">Female</label>
+            <input type="radio" name="gender" id="other" value="other" /><label
+              for="other"
+              >Other</label
+            >
           </fieldset>
         </div>
 
@@ -115,19 +131,71 @@
               id="javascript"
               value="Javascript"
             />
-            <label for="java">Java</label>
+            <label for="javascript">Javascript</label>
             <input type="checkbox" name="skills" id="c" value="C" />
             <label for="c">C</label>
-            <input
-              type="checkbox"
-              name="skills"
-              id="javascript"
-              value="Javascript"
-            />
-            <label for="javascript">Javascript</label>
+            <input type="checkbox" name="skills" id="java" value="Java" />
+            <label for="java">Java</label>
             <input type="checkbox" name="skills" id="go" value="Go" />
             <label for="go">Go</label>
           </fieldset>
+        </div>
+
+        <div>
+          <label for="linkedin">Linkedin URL:</label>
+          <input
+            type="url"
+            name="linkedin"
+            id="linkedin"
+            placeholder="https://linkedin.com/in/username"
+          />
+        </div>
+
+        <div>
+          <label for="github">Github URL:</label>
+          <input
+            type="url"
+            name="github"
+            id="github"
+            placeholder="https://github.com/username"
+          />
+        </div>
+
+        <div>
+          <label for="interview_details">Interview Details: </label>
+          <input
+            type="text"
+            name="interview_details"
+            id="interview_details"
+            placeholder="Enter the upcoming interview details"
+          />
+        </div>
+
+        <div>
+          <label for="interview_time">Interview Time:</label>
+          <input
+            type="time"
+            name="interview_time"
+            id="interview_time"
+            placeholder="Enter the time of interview"
+          />
+        </div>
+
+        <div>
+          <label for="graduation_time">Graduation Month: </label>
+          <input type="month" name="graduation_time" id="graduation_time" />
+        </div>
+
+        <div>
+          <label for="skills_rating">Overall programming Skills *</label>
+          <input
+            type="range"
+            name="skills_rating"
+            id="skills_rating"
+            min="1"
+            max="10"
+            required
+          />
         </div>
 
         <div>

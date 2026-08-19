@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="container">
+    <header>
+        <h1>Dynamic Student Registration Form</h1>
+        <p>Fields change according to your selections.</p>
+    </header>
+
+    <form id="registrationForm" novalidate>
+
+        <!-- PERSONAL INFORMATION -->
+        <section class="card">
+            <h2>1. Personal Information</h2>
+
+            <div class="grid">
+                <div class="field">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name"
+                           minlength="3" maxlength="40"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password"
+                           minlength="8" placeholder="Minimum 8 characters" required>
+                    <div class="password-meter"><span id="passwordBar"></span></div>
+                    <small id="passwordText">Password strength</small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone"
+                           pattern="[0-9]{10}" maxlength="10"
+                           placeholder="10 digit number" required>
+                </div>
+
+                <div class="field">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <small id="ageDisplay"></small>
+                </div>
+
+                <div class="field">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" readonly>
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>Gender *</legend>
+                <label class="inline">
+                    <input type="radio" name="gender" value="Male" required> Male
+                </label>
+                <label class="inline">
+                    <input type="radio" name="gender" value="Female"> Female
+                </label>
+                <label class="inline">
+                    <input type="radio" name="gender" value="Other"> Other
+                </label>
+            </fieldset>
+        </section>
+
+        <!-- ACADEMIC INFORMATION -->
+        <section class="card">
+            <h2>2. Academic Information</h2>
+
+            <div class="grid">
+                <div class="field">
+                    <label for="status">Current Status *</label>
+                    <select id="status" name="status" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="student">Student</option>
+                        <option value="professional">Working Professional</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="branch">Branch *</label>
+                    <select id="branch" name="branch" required>
+                        <option value="" disabled selected>Select branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="ME">Mechanical</option>
+                        <option value="CE">Civil</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- STUDENT FIELDS -->
+            <div id="studentFields" class="dynamic-box hidden">
+                <h3>Student Details</h3>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="college">College Name *</label>
+                        <input type="text" id="college" name="college"
+                               placeholder="Enter college name">
+                    </div>
+
+                    <div class="field">
+                        <label for="year">Year of Study *</label>
+                        <select id="year" name="year">
+                            <option value="" disabled selected>Select year</option>
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option>4th Year</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="cgpa">CGPA *</label>
+                        <input type="number" id="cgpa" name="cgpa"
+                               min="0" max="10" step="0.01"
+                               placeholder="0 - 10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROFESSIONAL FIELDS -->
+            <div id="professionalFields" class="dynamic-box hidden">
+                <h3>Professional Details</h3>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company"
+                               placeholder="Enter company name">
+                    </div>
+
+                    <div class="field">
+                        <label for="experience">Experience (Years) *</label>
+                        <input type="number" id="experience" name="experience"
+                               min="0" max="50" step="0.1">
+                    </div>
+
+                    <div class="field">
+                        <label for="role">Current Role *</label>
+                        <input type="text" id="role" name="role"
+                               placeholder="e.g. Software Developer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- BRANCH-SPECIFIC FIELDS -->
+            <div id="branchFields" class="dynamic-box hidden">
+                <h3 id="branchTitle">Branch Skills</h3>
+                <div id="branchOptions"></div>
+            </div>
+        </section>
+
+        <!-- INTERNSHIP -->
+        <section class="card">
+            <h2>3. Internship Preferences</h2>
+
+            <div class="grid">
+                <div class="field">
+                    <label for="internship">Internship Type *</label>
+                    <select id="internship" name="internship" required>
+                        <option value="" disabled selected>Select internship type</option>
+                        <option value="software">Software Development</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="data">Data Science / AI</option>
+                        <option value="embedded">Embedded Systems</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="interviewTime">Preferred Interview Time</label>
+                    <input type="time" id="interviewTime" name="interviewTime">
+                </div>
+
+                <div class="field">
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="url" id="linkedin" name="linkedin"
+                           placeholder="https://linkedin.com/in/username">
+                </div>
+
+                <div class="field">
+                    <label for="github">GitHub</label>
+                    <input type="url" id="github" name="github"
+                           placeholder="https://github.com/username">
+                </div>
+            </div>
+
+            <div id="internshipFields" class="dynamic-box hidden">
+                <h3 id="internshipTitle">Internship Details</h3>
+                <div id="internshipOptions"></div>
+            </div>
+        </section>
+
+        <!-- GENERAL INPUT TYPES -->
+        <section class="card">
+            <h2>4. Additional Information</h2>
+
+            <div class="field">
+                <label for="search">Search / Preferred Technology</label>
+                <input type="search" id="search" name="search"
+                       placeholder="Search technology">
+            </div>
+
+            <div class="field">
+                <label for="skillLevel">
+                    Overall Skill Level:
+                    <output id="skillValue">5</output>/10
+                </label>
+                <input type="range" id="skillLevel" name="skillLevel"
+                       min="1" max="10" value="5">
+            </div>
+
+            <div class="field">
+                <label for="graduation">Graduation Month</label>
+                <input type="month" id="graduation" name="graduation">
+            </div>
+
+            <div class="field">
+                <label for="resume">Resume *</label>
+                <input type="file" id="resume" name="resume"
+                       accept=".pdf,application/pdf" required>
+            </div>
+
+            <div class="field">
+                <label for="requirements">Requirements / Comments</label>
+                <textarea id="requirements" name="requirements"
+                          maxlength="500" rows="5"
+                          placeholder="Enter your requirements"></textarea>
+                <small><span id="count">0</span>/500 characters</small>
+            </div>
+
+            <input type="hidden" name="formType" value="studentRegistration">
+
+            <label class="inline">
+                <input type="checkbox" id="agree" required>
+                I confirm that the information provided is correct. *
+            </label>
+        </section>
+
+        <div id="message" class="message" aria-live="polite"></div>
+
+        <div class="buttons">
+            <button type="submit">Submit Registration</button>
+            <button type="reset" class="reset">Reset</button>
+        </div>
+
+    </form>
+
+    <footer>
+        <p>&copy; 2026 Dynamic Student Registration</p>
+    </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

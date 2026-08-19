@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f3c88;
+}
+
+form {
+  width: 700px;
+  max-width: 100%;
+  margin: auto;
+  padding: 30px;
+
+  background-color: white;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+form > div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+
+  font-size: 15px;
+
+  border: 1px solid #bbb;
+  border-radius: 5px;
+
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1f3c88;
+}
+
+fieldset {
+  padding: 15px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+input[type="file"] {
+  display: block;
+  margin-top: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #1f3c88;
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: #777;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+input:required,
+select:required,
+textarea:required {
+  background-color: #fafcff;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 20px;
+  }
+}
