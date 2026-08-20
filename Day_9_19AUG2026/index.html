@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <input
+      type="number"
+      name="param_1"
+      id="param_1"
+      placeholder="Enter a value"
+    />
+    <input
+      type="number"
+      name="param_2"
+      id="param_2"
+      placeholder="Enter a value"
+    />
+    <select name="operation" id="operation">
+      <option hidden>Choose operation</option>
+      <option value="Add">Add</option>
+      <option value="Substract">Substract</option>
+      <option value="Multiply">Multiply</option>
+      <option value="Division">Division</option>
+    </select>
+    <button type="submit" onclick="CalucatorFunction()">Calculate</button>
+    <p name="result" id="result"></p>
+  </body>
+  <script src="calculator.js" ref="reference"></script>
+</html>
